@@ -1,0 +1,3 @@
+# secrets-monitor
+
+This repository contains the Lambda function source code for implementing a rotator for AWS-managed secrets. The basic shell of the code has been taken from [this lambda function](https://github.com/aws-samples/aws-secrets-manager-rotation-lambdas/blob/master/SecretsManagerRotationTemplate/lambda_function.py) provided by AWS. However due to the uncertainty of the cryptographic security of [secretsmanager.get_random_password()](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/secretsmanager/client/get_random_password.html), the function has been updated to use the [secrets](https://docs.python.org/3/library/secrets.html) module of the python standard library instead.
